@@ -74,8 +74,12 @@ internship = st.sidebar.slider("Internship Score", 0, 100, 80)
 # ------------------------------------------
 if st.sidebar.button("Predict Package"):
 
+    # input_data = np.DataFrame([[cgpa, iq]], columns=["CGPA", "IQ"])
+    # prediction = model.predict(input_data)
+
     input_data = np.array([[cgpa, iq, internship]])
     prediction = model.predict(input_data)
+
     predicted_package = prediction[0]
 
     st.subheader("📊 Prediction Result")
